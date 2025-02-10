@@ -1,0 +1,40 @@
+{
+  "name": "tutorial-6-api-testing-with-vite-vitest",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:alternative": "vitest run --pool=forks",
+    "test:ui": "vitest --ui",
+    "format": "npx prettier --write .",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@stylistic/eslint-plugin-ts": "^3.1.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node-fetch": "^2.6.12",
+    "@typescript-eslint/parser": "^8.23.0",
+    "@vitest/ui": "^3.0.5",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.5.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.23.0",
+    "vite": "^6.1.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "ky": "^1.7.4",
+    "vitest": "^3.0.5",
+    "zod": "^3.24.1"
+  }
+}
