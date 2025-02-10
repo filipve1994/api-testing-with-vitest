@@ -31,7 +31,7 @@ export class HttpClient implements IHttpClient {
         return apiKy;
     }
 
-    async getRequest<T>(url: string) {
+    async getRequest(url: string) {
         try {
             return await this.getKyInstance("https://reqres.in/api")
                 .get(url);
@@ -53,14 +53,22 @@ export class HttpClient implements IHttpClient {
         }
     }
 
-    async postRequest<T>(url: string, payload: T) {
+    async postRequest(url: string, payload: T) {
         try {
             return await this.getKyInstance("https://reqres.in/api")
                 .post(url, {
                     json: payload
                 });
         } catch (error) {
-            return error.response;
+            if (error instanceof HTTPError) {
+                // if (error.name === 'HTTPError') {
+                console.log(error.message);
+                // return await error.response.json();
+
+                return error.response;
+            }
+
+            // return error.response;
             // return error;
         }
     }
